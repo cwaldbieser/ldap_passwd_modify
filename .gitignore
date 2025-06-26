@@ -1,0 +1,5 @@
+
+*.pyc
+.venv
+_examples
+test_data_
