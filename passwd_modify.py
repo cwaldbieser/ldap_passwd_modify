@@ -27,7 +27,10 @@ def main(args):
     if args.bind_dn:
         bind_dn = args.bind_dn
     curr_passwd = getpass.getpass("Current Password: ").strip()
-    new_passwd = getpass.getpass("New Password: ").strip()
+    if not args.test_bind:
+        new_passwd = getpass.getpass("New Password: ").strip()
+    else:
+        new_passwd = None
     bind_passwd = curr_passwd
     logger.debug(f"BIND DN >>{bind_dn}<<")
     logger.debug(f"BIND password >>{bind_passwd}<<")
